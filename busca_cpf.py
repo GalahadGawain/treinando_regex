@@ -4,7 +4,7 @@ from extrator_base import ExtratorBase
 
 class ExtratorDeCPF(ExtratorBase):
 
-    def _processar_matches(self, matches):
+    def _processar_matches(self, matches) -> list:
         cpfs_unicos = {}
         for cpf in matches:
             somente_numeros = re.sub(r"\D", "", cpf)
@@ -17,11 +17,11 @@ class ExtratorDeCPF(ExtratorBase):
             resultados.append(cpf_formatado)
         return resultados
 
-    def _get_regex(self):
+    def _get_regex(self) -> None:
         return r"\d{3}[.-]?\d{3}[.-]?\d{3}[.-]?\d{2}"
 
-    def _get_titulo(self):
+    def _get_titulo(self) -> None:
         return "CPFs"
 
-    def procurar_cpf(self):
+    def procurar_cpf(self) -> None:
         self.executar()

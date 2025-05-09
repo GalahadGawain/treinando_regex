@@ -6,11 +6,10 @@ from busca_data import ExtratorDeData
 
 
 class ImprimeResultados:
-
     def __init__(self, banco_csv="database.csv") -> None:
         self.banco_csv = banco_csv
 
-    def imprime_resultados(self) -> None:
+    def imprime_resultados(self):
         print("\n")
         ExtratorDeNome(self.banco_csv).executar()
 
